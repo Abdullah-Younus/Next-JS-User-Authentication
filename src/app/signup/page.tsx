@@ -1,11 +1,35 @@
-import React from 'react'
+"use client";
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
 
-const page = () => {
+const Signup = () => {
+    const [user, setUser] = React.useState({
+        email: "",
+        password: "",
+        username: "",
+    });
+
+    const onSignUp = () => {
+
+    }
+
     return (
-        <div className='flex'>
+        <div className='flex flex-col items-center justify-center min-h-screen py-2'>
             <h1 className='text-center text-black text-2xl'>Signup</h1>
+            <label htmlFor="username">username</label>
+            <input className='p-2 border border-gray-300 rounded-lg mb-2 focus:outline-none' type="text" id='username' value={user.username} onChange={(e) => setUser({ ...user, username: e.target.value })} />
+            <label htmlFor="email">email</label>
+            <input className='p-2 border border-gray-300 rounded-lg mb-2 focus:outline-none' type="text" id='email' value={user.email} onChange={(e) => setUser({ ...user, email: e.target.value })} />
+
+            <label htmlFor="password">password</label>
+            <input className='p-2 border border-gray-300 rounded-lg mb-2 focus:outline-none' type="password" id='password' value={user.password} onChange={(e) => setUser({ ...user, password: e.target.value })} />
+       
+            <button onClick={onSignUp}>SignUp Here</button>
+            <Link href={"/"}>Visit to login page</Link> 
         </div>
     )
 }
 
-export default page
+export default Signup;
