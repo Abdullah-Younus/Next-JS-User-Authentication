@@ -1,4 +1,5 @@
-import mongoose from 'mongoose';
+import * as mongoose from "mongoose"
+
 
 export async function connect() {
     try {

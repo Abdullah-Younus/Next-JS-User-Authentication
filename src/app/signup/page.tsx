@@ -1,19 +1,31 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
 const Signup = () => {
+
+    const router = useRouter();
     const [user, setUser] = React.useState({
         email: "",
         password: "",
         username: "",
     });
+    const [buttonDistabled, setButtonDisabled] = React.useState(false);
 
-    const onSignUp = () => {
+    const onSignUp = async () => {
 
     }
+
+    useEffect(() => {
+        if (user.email.length > 0 && user.password.length > 0 && user.username.length > 0) {
+            setButtonDisabled(false);
+        }else  {
+            setButtonDisabled(true);
+        }
+    }, [user])
+
 
     return (
         <div className='flex flex-col items-center justify-center min-h-screen py-2'>
@@ -25,9 +37,9 @@ const Signup = () => {
 
             <label htmlFor="password">password</label>
             <input className='p-2 border border-gray-300 rounded-lg mb-2 focus:outline-none' type="password" id='password' value={user.password} onChange={(e) => setUser({ ...user, password: e.target.value })} />
-       
+
             <button onClick={onSignUp}>SignUp Here</button>
-            <Link href={"/"}>Visit to login page</Link> 
+            <Link href={"/"}>Visit to login page</Link>
         </div>
     )
 }

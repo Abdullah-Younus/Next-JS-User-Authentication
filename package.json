@@ -18,6 +18,7 @@
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.4.5",
     "next": "13.4.19",
     "nodemailer": "^6.9.4",
     "postcss": "8.4.28",
@@ -26,5 +27,8 @@
     "react-hot-toast": "^2.4.1",
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2"
   }
 }
