@@ -17,12 +17,12 @@ export async function POST(request: NextRequest, response: NextResponse) {
             return NextResponse.json({ error: "Invalid token" }, { status: 400 })
         }
 
-        user.isVerfied = true;
+        user.isVerified = true;
         user.verifyToken = undefined;
         user.verifyTokenExpiry = undefined;
         await user.save();
 
-        return NextResponse.json({ message: "Email Verified successfully" }, { status: 200 });
+        return NextResponse.json({ message: "Email Verified successfully", status: true }, { status: 200 });
 
     } catch (error: any) {
         return NextResponse.json({

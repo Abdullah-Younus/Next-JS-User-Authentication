@@ -38,7 +38,7 @@ const Profilepage = () => {
       Profile Page
 
       <hr />
-      <h1 className="p-1 rounded ">{data === "nothing" ? "Nothing" : <Link href={`/profile/${data}`}>{data}</Link>}</h1>
+      <h1 className="p-1 rounded ">{data === 'nothing' ? "Nothing" : <Link href={`/profile/${data}`}>{data}</Link>}</h1>
 
       <hr />
       <button onClick={onLogout} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4'>
