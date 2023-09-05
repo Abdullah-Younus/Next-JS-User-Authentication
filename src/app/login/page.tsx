@@ -53,8 +53,8 @@ const Loginpage = () => {
             <label htmlFor="password">password</label>
             <input className='p-2 border border-gray-300 rounded-lg mb-2 focus:outline-none' type="password" id='password' value={user.password} onChange={(e) => setUser({ ...user, password: e.target.value })} />
 
-            <button onClick={onlogin}>Login</button>
-            <Link href={"/signup"}>Sigup page</Link>
+            <button onClick={onlogin} className='border border-slate-800 p-5 px-10'>Login</button>
+            <Link href={"/signup"} className='border border-slate-800 p-5 m-5 '>Sigup page</Link>
         </div>
     )
 }
