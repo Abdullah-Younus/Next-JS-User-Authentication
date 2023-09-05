@@ -23,5 +23,5 @@ export function middleware(request: NextRequest) {
  
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: ['/','/profile','/login','/signup','/verifyemail'],
+  matcher: ['/','https://next-js-user-authentication.vercel.app','/profile','/login','/signup','/verifyemail'],
 }
